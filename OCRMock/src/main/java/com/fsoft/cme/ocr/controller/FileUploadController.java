@@ -35,6 +35,7 @@ public class FileUploadController {
 	@Value("${image.url}")
 	private String imageUrl;
 	
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/uploadFile")
 	@ResponseBody
 	public URLResponse handleFileUpload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {

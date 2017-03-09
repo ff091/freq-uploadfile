@@ -53,14 +53,14 @@ public class FileUploadController {
 		return null;
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/uploadFile")
+	/*@RequestMapping(method = RequestMethod.POST, value = "/uploadFile")
 	@ResponseBody
 	public URLResponse handleJsonUpload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
 		long start = System.currentTimeMillis();
 
 		try {
 			if (!file.isEmpty()) {
-				String saveFileName = start + "_" + file.getOriginalFilename();
+				String saveFileName = start + "_" + StringUtils.normalizeFileName(file.getOriginalFilename());
 				Files.copy(file.getInputStream(), Paths.get(ROOT, saveFileName));
 				return new URLResponse(imageUrl + saveFileName);
 			}
@@ -69,7 +69,7 @@ public class FileUploadController {
 		}
 		LOGGER.info("Upload time time: " + (System.currentTimeMillis() - start) + " ms.");
 		return null;
-	}
+	}*/
 
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/image")
